@@ -1,41 +1,23 @@
-# COMP2404 Assignment 2
+# COMP 2404 — Assignment 2
 
-**Name:** Evan Beaudoin  
-**Student Number:** 101340118
+## Assignment overview
 
----
+This project implements a **project and asset management** application in C++. **ProjectManager** coordinates **Project** and **Asset** objects stored in array-backed collections (**ProjectArray**, **AssetArray**) and an **AssetStore**. A **Control** class drives the interactive flow with a **View** for menus and I/O. A separate test harness (**`a2test`**, built from `testmain.cc` with **TestControl** and **Tester**) supports automated or menu-driven checks alongside the main app (**`a2`**).
 
-## Files Included
+## Author and course information
 
-### Header Files (.h)
-- `Asset.h` - Asset class declaration
-- `AssetArray.h` - AssetArray class declaration
-- `AssetStore.h` - AssetStore class declaration
-- `Control.h` - Control class declaration
-- `defs.h` - Common definitions and constants
-- `Project.h` - Project class declaration
-- `ProjectArray.h` - ProjectArray class declaration
-- `ProjectManager.h` - ProjectManager class declaration
-- `TestControl.h` - TestControl class declaration
-- `Tester.h` - Tester class declaration
-- `View.h` - View class declaration
+| Field | Value |
+|--------|--------|
+| **Author** | Evan Beaudoin |
+| **Student number** | 101340118 |
+| **Date** | April 5, 2026 |
+| **Course** | COMP 2404 — Introduction to Software Engineering |
+| **Institution** | Carleton University |
+| **Instructor** | Darryl Hill |
 
-### Implementation Files (.cc)
-- `Asset.cc` - Asset class implementation
-- `AssetArray.cc` - AssetArray class implementation
-- `AssetStore.cc` - AssetStore class implementation
-- `Control.cc` - Control class implementation
-- `main.cc` - Main program entry point
-- `Project.cc` - Project class implementation
-- `ProjectArray.cc` - ProjectArray class implementation
-- `ProjectManager.cc` - ProjectManager class implementation
-- `TestControl.cc` - TestControl class implementation
-- `testmain.cc` - Test program entry point
-- `Tester.cc` - Tester class implementation
-- `View.cc` - View class implementation
+## Project directory
 
-
-## Directory Structure
+All paths below are relative to the `assignment2` folder (where the `Makefile` lives).
 
 ```
 assignment2/
@@ -66,4 +48,51 @@ assignment2/
 └── View.h
 ```
 
-Used AI to format README file
+## How to build and run
+
+You need **g++** and **make** (for example on Linux, macOS, or **WSL** on Windows).
+
+### Build
+
+1. Open a terminal and change into the project directory:
+
+   ```bash
+   cd path/to/assignment2
+   ```
+
+2. Build both the main program and the test executable:
+
+   ```bash
+   make
+   ```
+
+   This produces:
+
+   - **`a2`** — main interactive application  
+   - **`a2test`** — test menu / automated checks  
+
+   To build only the main program you can run `make a2`; for only tests, `make a2test`.
+
+### Run the main program
+
+```bash
+./a2
+```
+
+Follow the on-screen menu to work with projects and assets.
+
+### Run the test harness
+
+```bash
+./a2test
+```
+
+Choose options from the menu to run individual tests or the full suite.
+
+### Clean build artifacts
+
+```bash
+make clean
+```
+
+Removes `a2`, `a2test`, and `*.o` in the current directory.
